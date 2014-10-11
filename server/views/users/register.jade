@@ -1,0 +1,22 @@
+extends ../shared/layout
+
+block main-content
+    div.jumbotron
+        form(method="post" class="form-horizontal" role="form")
+            fieldset
+                legend Registration Form
+                div.form-group
+                    label(for="username" class="col-sm-2 control-label") Username
+                    div.col-sm-10
+                        input(id="username" class="form-control" type="text" name="username" placeholder="Username")
+                div.form-group
+                    label(for="password" class="col-sm-2 control-label") Password
+                    div.col-sm-10
+                        input(id="password" class="form-control" type="password" name="password" placeholder="Password")
+                div.form-group
+                    label(for="confirm-password" class="col-sm-2 control-label") Confirm Password
+                    div.col-sm-10
+                        input(id="confirm-password" class="form-control" type="password" name="confirmPassword" placeholder="Confirm Password")
+                div.form-group
+                    div.col-sm-offset-2.col-sm-10
+                        input(type="submit" value="Register" class="btn btn-lg")
