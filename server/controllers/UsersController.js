@@ -19,6 +19,10 @@ module.exports = {
             req.session.error = 'Passwords do not match!';
             res.redirect('/register');
         }
+        else if (newUserData.username.length < 6 || newUserData.username.length > 20) {
+            req.session.error = 'Username muse be between 6 and 20 characters inclusive!';
+            res.redirect('/register');
+        }
         else {
             newUserData.salt = encryption.generateSalt();
             newUserData.hashPass = encryption.generateHashedPassword(newUserData.salt, newUserData.password);
