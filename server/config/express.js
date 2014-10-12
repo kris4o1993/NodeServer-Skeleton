@@ -28,4 +28,8 @@ module.exports = function(app, config) {
 
         next();
     });
+    app.use(function(req, res, next) {
+        app.locals.currentUser = req.user;
+        next();
+    })
 };
